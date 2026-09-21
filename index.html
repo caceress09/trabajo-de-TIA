@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa General Belgrano | Tourist Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">🍺</span>
+            <div>
+                <h1>Villa General Belgrano</h1>
+                <p>Tourist Guide</p>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="#home">Home</a>
+            <a href="restaurants.html">Restaurants</a>
+            <a href="#places">Tourist Places</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main id="home">
+
+        <!-- ================= HERO CAROUSEL ================= -->
+        <section class="hero">
+            <div class="carousel">
+
+                <!-- Slide 1: La Virgen -->
+                <div class="slide active">
+                    <img src="img/virgen.jpeg" alt="Pozo Verde y Cerro de la Virgen">
+                    <div class="slide-text">
+                        <p>WELCOME TO VGB</p>
+                        <h2>Cerro de la<br>
+                            <span>Virgen</span>
+                        </h2>
+                        <h3>
+                            Breathtaking views and nature at its best.
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Slide 2: La Fiesta -->
+                <div class="slide">
+                    <img src="img/fiesta.jpeg" alt="Oktoberfest y Fiestas Tradicionales">
+                    <div class="slide-text">
+                        <p>LIVE THE EXPERIENCE</p>
+                        <h2>Traditional<br>
+                            <span>Festivals</span>
+                        </h2>
+                        <h3>
+                            Music, culture, beer, and celebrations all year round.
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Slide 3: La Cúpula -->
+                <div class="slide">
+                    <img src="img/cupula.jpeg" alt="Torre del Reloj y Cúpula">
+                    <div class="slide-text">
+                        <p>EXPLORE THE TOWN</p>
+                        <h2>Iconic Town<br>
+                            <span>Architecture</span>
+                        </h2>
+                        <h3>
+                            Discover the famous clock tower and Central European charm.
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button class="arrow previous" onclick="previousSlide()">❮</button>
+                <button class="arrow next" onclick="nextSlide()">❯</button>
+
+                <!-- Navigation Dots -->
+                <div class="dots">
+                    <button class="dot active-dot" onclick="goToSlide(0)"></button>
+                    <button class="dot" onclick="goToSlide(1)"></button>
+                    <button class="dot" onclick="goToSlide(2)"></button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= WELCOME ================= -->
+        <section class="welcome">
+            <p class="small-title">A LITTLE PIECE OF EUROPE IN CORDOBA</p>
+            <h2>Welcome to Villa General Belgrano</h2>
+            <p>
+                Villa General Belgrano is a charming town located in
+                the Calamuchita Valley, surrounded by mountains,
+                forests and beautiful landscapes.
+            </p>
+            <p>
+                Its Central European influence can be seen in its
+                architecture, food, festivals and local traditions.
+            </p>
+        </section>
+
+        <!-- ================= THREE BUTTONS ================= -->
+        <section class="quick-menu">
+            <h2>What are you looking for?</h2>
+            <div class="main-buttons">
+                <a href="restaurants.html" class="big-button">
+                    <span>🍺</span>
+                    <strong>Restaurants</strong>
+                    <small>Discover local food</small>
+                </a>
+
+                <a href="#places" class="big-button">
+                    <span>🌲</span>
+                    <strong>Tourist Places</strong>
+                    <small>Places you should visit</small>
+                </a>
+
+                <a href="#contact" class="big-button">
+                    <span>✉️</span>
+                    <strong>Contact</strong>
+                    <small>Get in touch with us</small>
+                </a>
+            </div>
+        </section>
+
+        <!-- ================= RESTAURANTS PREVIEW ================= -->
+        <section id="restaurants" class="restaurants">
+            <div class="section-heading">
+                <p class="small-title">LOCAL FLAVORS</p>
+                <h2>Restaurants</h2>
+                <p>Enjoy some of the traditional flavors of Villa General Belgrano.</p>
+            </div>
+
+            <div class="restaurant-list">
+                <article class="restaurant-card">
+                    <div class="restaurant-icon">🍺</div>
+                    <div>
+                        <h3>Craft Beer</h3>
+                        <p>Try locally produced craft beer and enjoy the traditional atmosphere of the town.</p>
+                    </div>
+                </article>
+
+                <article class="restaurant-card">
+                    <div class="restaurant-icon">🥨</div>
+                    <div>
+                        <h3>Central European Food</h3>
+                        <p>Taste traditional dishes influenced by German and Central European cuisine.</p>
+                    </div>
+                </article>
+
+                <article class="restaurant-card">
+                    <div class="restaurant-icon">🍫</div>
+                    <div>
+                        <h3>Chocolate Shops</h3>
+                        <p>Discover handmade chocolates, cakes and delicious local desserts.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= TOURIST PLACES ================= -->
+        <section id="places" class="places">
+            <div class="section-heading">
+                <p class="small-title">EXPLORE VGB</p>
+                <h2>Tourist Places</h2>
+                <p>Some places to discover during your visit.</p>
+            </div>
+
+            <div class="place-grid">
+                <article class="place-card">
+                    <div class="place-number">01</div>
+                    <h3>Town Center</h3>
+                    <p>Walk through the traditional streets and discover shops, restaurants, crafts and local architecture.</p>
+                </article>
+
+                <article class="place-card">
+                    <div class="place-number">02</div>
+                    <h3>Streams Walk</h3>
+                    <p>Enjoy a relaxing walk surrounded by trees, small streams and nature.</p>
+                </article>
+
+                <article class="place-card">
+                    <div class="place-number">03</div>
+                    <h3>Mountain Landscape</h3>
+                    <p>The mountains around the town offer beautiful views and outdoor activities.</p>
+                </article>
+
+                <article class="place-card">
+                    <div class="place-number">04</div>
+                    <h3>Local Craft Shops</h3>
+                    <p>Find handmade products, souvenirs and traditional crafts made by local artists.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================= TRADITIONS ================= -->
+        <section class="traditions">
+            <div class="traditions-content">
+                <p class="small-title">OUR CULTURE</p>
+                <h2>Traditions that make VGB special</h2>
+                <p>
+                    Villa General Belgrano is known for its European heritage and its traditional festivals.
+                    Throughout the year, visitors can enjoy music, food, crafts and local celebrations.
+                </p>
+
+                <div class="tradition-items">
+                    <div>
+                        <span>🍺</span>
+                        <p>Beer Festival</p>
+                    </div>
+                    <div>
+                        <span>🍫</span>
+                        <p>Chocolate Festival</p>
+                    </div>
+                    <div>
+                        <span>🎶</span>
+                        <p>Traditional Events</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section id="contact" class="contact">
+            <div class="contact-box">
+                <p class="small-title">GET IN TOUCH</p>
+                <h2>Contact</h2>
+                <p>Do you want to know more about Villa General Belgrano?</p>
+
+                <div class="contact-data">
+                    <p>Villa General Belgrano, Córdoba, Argentina</p>
+                    <p>juliancorrigieron@gmail.com</p>
+                    <p>+54 3546 40-7360</p>
+                </div>
+
+                <a href="mailto:juliancorrigieron@gmail.com" class="contact-button">
+                    Send us an email
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <h3>Villa General Belgrano Tourist Guide</h3>
+        <p>Discover the town. Enjoy the experience.</p>
+        <div class="footer-line"></div>
+        <p class="copyright">© 2026 - School Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

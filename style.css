@@ -1,0 +1,947 @@
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f4efe5;
+
+    color: #3c342b;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+    height: 85px;
+
+    background-color: #283d2e;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    border-bottom: 4px solid #bd9656;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 35px;
+}
+
+.logo h1 {
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+}
+
+.logo p {
+    color: #d9b778;
+
+    font-size: 13px;
+
+    margin-top: 3px;
+}
+
+
+/* MENU */
+
+.menu {
+    display: flex;
+
+    gap: 25px;
+}
+
+.menu a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #d9b778;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    width: 100%;
+
+    height: 650px;
+
+    background-color: #222;
+
+    overflow: hidden;
+}
+
+.carousel {
+    width: 100%;
+
+    height: 100%;
+
+    position: relative;
+}
+
+
+/* SLIDES */
+
+.slide {
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    opacity: 0;
+
+    transition: opacity 0.8s ease;
+
+    pointer-events: none;
+}
+
+.slide.active {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+.slide img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* DARK OVERLAY */
+
+.slide::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(25, 35, 27, 0.75),
+        rgba(25, 35, 27, 0.20)
+    );
+}
+
+
+/* TEXT */
+
+.slide-text {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 10%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: white;
+
+    max-width: 650px;
+}
+
+.slide-text p {
+    color: #e0bd7c;
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.slide-text h2 {
+    font-family: Georgia, serif;
+
+    font-size: 60px;
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+.slide-text h2 span {
+    color: #dfbb77;
+}
+
+.slide-text h3 {
+    font-weight: normal;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* ARROWS */
+
+.arrow {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    background-color: rgba(0,0,0,0.25);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.arrow:hover {
+    background-color: #bd9656;
+}
+
+.previous {
+    left: 30px;
+}
+
+.next {
+    right: 30px;
+}
+
+
+/* DOTS */
+
+.dots {
+    position: absolute;
+
+    z-index: 5;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 9px;
+}
+
+.dot {
+    width: 11px;
+
+    height: 11px;
+
+    border-radius: 50%;
+
+    border: 2px solid white;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.dot.active-dot {
+    background: white;
+}
+
+
+/* ================= WELCOME ================= */
+
+.welcome {
+    max-width: 900px;
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 80px 25px;
+}
+
+.small-title {
+    color: #a8793c;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+.welcome h2 {
+    font-family: Georgia, serif;
+
+    font-size: 40px;
+
+    margin-bottom: 20px;
+
+    color: #314633;
+}
+
+.welcome p:not(.small-title) {
+    color: #6b6155;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ================= THREE BUTTONS ================= */
+
+.quick-menu {
+    background-color: #e6ddce;
+
+    padding: 70px 8%;
+
+    text-align: center;
+}
+
+.quick-menu h2 {
+    font-family: Georgia, serif;
+
+    font-size: 34px;
+
+    color: #314633;
+
+    margin-bottom: 35px;
+}
+
+.main-buttons {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1050px;
+
+    margin: auto;
+}
+
+
+/* BUTTON */
+
+.big-button {
+    background-color: #fffdf8;
+
+    padding: 30px 20px;
+
+    border: 1px solid #d4c8b5;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    color: #3c342b;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    transition: 0.3s;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.big-button:hover {
+    transform: translateY(-6px);
+
+    background-color: #314633;
+
+    color: white;
+
+    border-color: #314633;
+}
+
+.big-button span {
+    font-size: 40px;
+
+    margin-bottom: 12px;
+}
+
+.big-button strong {
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+
+    margin-bottom: 7px;
+}
+
+.big-button small {
+    color: #817568;
+
+    font-size: 13px;
+}
+
+.big-button:hover small {
+    color: #d8d0c4;
+}
+
+
+/* ================= RESTAURANTS ================= */
+
+.restaurants {
+    padding: 80px 8%;
+
+    background-color: #f8f4ec;
+}
+
+.section-heading {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 0 auto 45px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+
+    color: #314633;
+
+    margin-bottom: 12px;
+}
+
+.section-heading p:not(.small-title) {
+    color: #74695c;
+
+    line-height: 1.7;
+}
+
+
+/* RESTAURANT CARDS */
+
+.restaurant-list {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.restaurant-card {
+    background-color: white;
+
+    padding: 30px 25px;
+
+    border-top: 4px solid #bd9656;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+
+    border-radius: 3px;
+}
+
+.restaurant-icon {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.restaurant-card h3 {
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+.restaurant-card p {
+    color: #71675b;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* ================= TOURIST PLACES ================= */
+
+.places {
+    padding: 80px 8%;
+
+    background-color: #e8e0d2;
+}
+
+.place-grid {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.place-card {
+    background-color: #fffdf8;
+
+    padding: 30px;
+
+    min-height: 190px;
+
+    border-left: 5px solid #314633;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.place-card:hover {
+    transform: translateX(5px);
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.place-number {
+    color: #bd9656;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+.place-card h3 {
+    font-family: Georgia, serif;
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+.place-card p {
+    color: #71675b;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* ================= TRADITIONS ================= */
+
+.traditions {
+    background-color: #314633;
+
+    color: white;
+
+    padding: 80px 8%;
+
+    text-align: center;
+}
+
+.traditions-content {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.traditions .small-title {
+    color: #d9b778;
+}
+
+.traditions h2 {
+    font-family: Georgia, serif;
+
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.traditions-content > p:not(.small-title) {
+    color: #d3d0c8;
+
+    line-height: 1.8;
+}
+
+.tradition-items {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 70px;
+
+    margin-top: 40px;
+}
+
+.tradition-items span {
+    font-size: 38px;
+}
+
+.tradition-items p {
+    margin-top: 8px;
+
+    font-size: 14px;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact {
+    padding: 80px 8%;
+
+    background-color: #f8f4ec;
+}
+
+.contact-box {
+    max-width: 800px;
+
+    margin: auto;
+
+    text-align: center;
+
+    background-color: white;
+
+    padding: 55px 30px;
+
+    border: 1px solid #ded4c5;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+}
+
+.contact h2 {
+    font-family: Georgia, serif;
+
+    color: #314633;
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.contact-box > p:not(.small-title) {
+    color: #71675b;
+
+    margin-bottom: 25px;
+}
+
+.contact-data {
+    margin-bottom: 30px;
+}
+
+.contact-data p {
+    margin: 8px;
+
+    color: #4f463c;
+}
+
+.contact-button {
+    display: inline-block;
+
+    background-color: #314633;
+
+    color: white;
+
+    padding: 13px 25px;
+
+    text-decoration: none;
+
+    border-radius: 3px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #bd9656;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: #202b23;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+footer h3 {
+    font-family: Georgia, serif;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #aaa59d;
+
+    font-size: 14px;
+}
+
+.footer-line {
+    width: 50px;
+
+    height: 2px;
+
+    background-color: #bd9656;
+
+    margin: 20px auto;
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 850px) {
+
+    .header {
+        height: auto;
+
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .menu {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+        height: 550px;
+    }
+
+    .slide-text {
+        left: 8%;
+
+        right: 8%;
+    }
+
+    .slide-text h2 {
+        font-size: 43px;
+    }
+
+    .main-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-list {
+        grid-template-columns: 1fr;
+    }
+
+    .place-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tradition-items {
+        gap: 30px;
+
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .logo h1 {
+        font-size: 18px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .hero {
+        height: 500px;
+    }
+
+    .slide-text h2 {
+        font-size: 36px;
+    }
+
+    .arrow {
+        width: 38px;
+
+        height: 38px;
+    }
+
+    .previous {
+        left: 15px;
+    }
+
+    .next {
+        right: 15px;
+    }
+
+}
+.zula{ 
+    width: 100%;
+    padding: auto;
+}
+.card2{ 
+    width: 50%;
+}
+/* ================= RESTAURANTS PAGE STYLES ================= */
+
+.restaurants-section {
+    padding: 20px 8% 80px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.restaurant-card-full {
+    background-color: #fffdf8;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #d4c8b5;
+    border-top: 4px solid #bd9656;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restaurant-card-full:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.restaurant-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: #e6ddce;
+}
+
+.restaurant-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.restaurant-card-full:hover .restaurant-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.restaurant-img-wrapper .badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #314633;
+    color: #e0bd7c;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.restaurant-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.restaurant-content h3 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    color: #314633;
+    margin-bottom: 12px;
+}
+
+.restaurant-content p {
+    color: #6b6155;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.restaurant-content p:last-child {
+    margin-bottom: 0;
+}
